@@ -1,38 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require('partials/head.php'); ?>
 
-
-<head>
-
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        header {
-            background: #e3e3e3;
-            padding: 2em;
-            text-align: center;   
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1> Task trecker  </h1>
-    </header>
+<ul> 
+    <?php foreach ($tasks as $task): ?>
     
-    <ul> 
-        <?php foreach ($tasks as $task): ?>
-        
-            <li>
-                <?php if ($task->completed): ?>  
-                    <strike><?= $task->description; ?></strike>  
-                <?php else: ?>
-                    <?= $task->description;?> 
-                <?php endif; ?>
-            </li>  
-        <?php endforeach; ?>
-    </ul>
+        <li>
+            <?php if ($task->completed): ?>  
+                <strike><?= $task->description; ?></strike>  
+            <?php else: ?>
+                <?= $task->description;?> 
+            <?php endif; ?>
+        </li>  
+    <?php endforeach; ?>
+</ul>
+
+<ul> 
+    <?php foreach ($users as $user): ?>
     
-</body>
+        <li>
+            <?= $user->username;?> 
+        </li>  
+    <?php endforeach; ?>
+</ul>
 
-
-</html>
+<form method="POST" action="/users">
+    <input name="username"></input>
+    <input name="email"></input>
+    <input name="password"></input>
+    <button type="submit">Submit</button> 
+</form>
+    
+<?php require('partials/footer.php'); ?>

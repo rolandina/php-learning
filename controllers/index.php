@@ -1,6 +1,6 @@
 <?php
 
-$tasks = $query->selectAll('todos');
+$users = App::get('database')->selectAll('user');
+$tasks = App::get('database')->selectAll('todos');
 
-
-require "view/index.view.php";
+require "views/index.view.php";
