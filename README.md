@@ -1,6 +1,14 @@
 # php-learning
 
-to start web site do in terminal
+## Requirements
+- php
+- composer
+- browser
+- terminal
+
+## How to start web site 
+
+To start webapp simply type in terminal
 
 ```
 git clone
